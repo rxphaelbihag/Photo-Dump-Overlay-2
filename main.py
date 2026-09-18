@@ -305,7 +305,7 @@ class FormApp:
             anchor='w', padx=5, pady=(5, 2))
 
         row = Frame(overlay_section); row.pack(fill='x', padx=5, pady=self.LINESPACE)
-        Label(row, text="Overlay file:").pack(side='left', anchor='n')
+        Label(row, text="Overlay file/s:").pack(side='left', anchor='n')
         Label(row, textvariable=self.overlay_var, wraplength=210,
               justify='left').pack(side='left', anchor='n', padx=(5, 0))
 
