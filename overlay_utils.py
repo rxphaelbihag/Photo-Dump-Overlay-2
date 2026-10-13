@@ -23,9 +23,15 @@ def apply_overlay(base_image_path: str,
     overlay_path = overlay_landscape_path if bw >= bh else overlay_portrait_path
     overlay = Image.open(overlay_path).convert("RGBA")
 
+<<<<<<< HEAD
     # Scale + center-crop base image to match overlay dimensions exactly
     base = ImageOps.fit(
         base, overlay.size,
+=======
+    # Scale + center-crop overlay to match base dimensions exactly
+    overlay = ImageOps.fit(
+        overlay, base.size,
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
         method=Image.Resampling.LANCZOS,
         centering=(0.5, 0.5),
     )

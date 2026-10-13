@@ -7,6 +7,7 @@ from PIL import Image, ImageTk, ImageOps
 import os
 from concurrent.futures import ThreadPoolExecutor
 from overlay_utils import apply_overlay
+<<<<<<< HEAD
 evil = False  #Incase mag robot uprising unya maging evil ang program kay makabalo ta kay iyaha nang i-True
 
 class FormApp:
@@ -17,6 +18,14 @@ class FormApp:
             self.root.title("Evil Photo Dump Overlay")
         else:
             self.root.title("Photo Dump Overlay")
+=======
+
+
+class FormApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Photo Dump Overlay")
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
         self.window_width = 900
         self.window_height = 600
         self.screen_width = root.winfo_screenwidth()
@@ -28,12 +37,17 @@ class FormApp:
         self.LINESPACE = 1
         self.BIGLINESPACE = 20
 
+<<<<<<< HEAD
         if evil == True:
             Label(root, text="Evil Photo Dump Overlay", font=("Arial", 16, "bold"), fg="red").grid(
                 row=0, column=0, columnspan=3, pady=(10, 0))
         else:
             Label(root, text="Photo Dump Overlay", font=("Arial", 16, "bold")).grid(
                 row=0, column=0, columnspan=3, pady=(10, 0))
+=======
+        Label(root, text="Photo Dump Overlay", font=("Arial", 16, "bold")).grid(
+            row=0, column=0, columnspan=3, pady=(10, 0))
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
 
         # --- FRAMES ---
         info_frame_outer = Frame(root, width=330, height=450, relief="solid", borderwidth=1)
@@ -46,12 +60,17 @@ class FormApp:
         preview_frame.grid_propagate(False)
         preview_frame.pack_propagate(False)
 
+<<<<<<< HEAD
         if evil == True:
             Label(preview_frame, text="EVIL PREVIEW", font=("Arial", 10, "bold"), fg="red").pack(
                 anchor='w', padx=5, pady=(5, 2))
         else:
             Label(preview_frame, text="PREVIEW", font=("Arial", 10, "bold")).pack(
                 anchor='w', padx=5, pady=(5, 2))
+=======
+        Label(preview_frame, text="PREVIEW", font=("Arial", 10, "bold")).pack(
+            anchor='w', padx=5, pady=(5, 2))
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
 
         preview_area = Frame(preview_frame, bg='grey')
         preview_area.pack(fill='both', expand=True, padx=5, pady=5)
@@ -280,24 +299,33 @@ class FormApp:
         input_section = Frame(info_frame)
         input_section.pack(fill='x', pady=(5, 0))
 
+<<<<<<< HEAD
         if evil == True:
             Label(input_section, text="EVIL INPUT", font=("Arial", 10, "bold"), fg="red").pack(
                 anchor='w', padx=5, pady=(5, 2))
         else:
             Label(input_section, text="INPUT", font=("Arial", 10, "bold")).pack(
                 anchor='w', padx=5, pady=(5, 2))
+=======
+        Label(input_section, text="INPUT", font=("Arial", 10, "bold")).pack(
+            anchor='w', padx=5, pady=(5, 2))
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
 
         row = Frame(input_section); row.pack(fill='x', padx=5, pady=self.LINESPACE)
         Label(row, text="Input files:").pack(side='left', anchor='n')
         Label(row, textvariable=self.folder_var, wraplength=210,
               justify='left').pack(side='left', anchor='n', padx=(5, 0))
 
+<<<<<<< HEAD
         if evil == True:
             BrowseFolderButtonLabel = "Browse Evil Folder"
         else:
             BrowseFolderButtonLabel = "Browse Folder"
 
         Button(input_section, text=BrowseFolderButtonLabel,
+=======
+        Button(input_section, text="Browse Folder",
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
                command=lambda: choose_folder(True)).pack(
             anchor='w', padx=5, pady=(self.LINESPACE, self.BIGLINESPACE))
 
@@ -322,24 +350,33 @@ class FormApp:
         overlay_section = Frame(info_frame)
         overlay_section.pack(fill='x', pady=(5, 0))
 
+<<<<<<< HEAD
         if evil == True:
             Label(overlay_section, text="EVIL OVERLAY", font=("Arial", 10, "bold"), fg="red").pack(
                 anchor='w', padx=5, pady=(5, 2))
         else:
             Label(overlay_section, text="OVERLAY", font=("Arial", 10, "bold")).pack(
                 anchor='w', padx=5, pady=(5, 2))
+=======
+        Label(overlay_section, text="OVERLAY", font=("Arial", 10, "bold")).pack(
+            anchor='w', padx=5, pady=(5, 2))
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
 
         row = Frame(overlay_section); row.pack(fill='x', padx=5, pady=self.LINESPACE)
         Label(row, text="Overlay file/s:").pack(side='left', anchor='n')
         Label(row, textvariable=self.overlay_var, wraplength=210,
               justify='left').pack(side='left', anchor='n', padx=(5, 0))
 
+<<<<<<< HEAD
         if evil == True:
             BrowseFileButtonLabel = "Browse Evil File(s)"
         else:
             BrowseFileButtonLabel = "Browse File(s)"
 
         Button(overlay_section, text=BrowseFileButtonLabel,
+=======
+        Button(overlay_section, text="Browse File(s)",
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
                command=choose_overlay_files).pack(
             anchor='w', padx=5, pady=(self.LINESPACE, self.BIGLINESPACE))
 
@@ -361,19 +398,28 @@ class FormApp:
         output_section = Frame(info_frame)
         output_section.pack(fill='x', pady=(5, 0))
 
+<<<<<<< HEAD
         if evil == True:
             Label(output_section, text="EVIL OUTPUT", font=("Arial", 10, "bold"), fg="red").pack(
                 anchor='w', padx=5, pady=(5, 2))
         else:
             Label(output_section, text="OUTPUT", font=("Arial", 10, "bold")).pack(
                 anchor='w', padx=5, pady=(5, 2))
+=======
+        Label(output_section, text="OUTPUT", font=("Arial", 10, "bold")).pack(
+            anchor='w', padx=5, pady=(5, 2))
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
 
         row = Frame(output_section); row.pack(fill='x', padx=5, pady=self.LINESPACE)
         Label(row, text="Output folder:").pack(side='left', anchor='n')
         Label(row, textvariable=self.output_var, wraplength=210,
               justify='left').pack(side='left', anchor='n', padx=(5, 0))
 
+<<<<<<< HEAD
         Button(output_section, text=BrowseFolderButtonLabel,
+=======
+        Button(output_section, text="Browse Folder",
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
                command=lambda: choose_folder(False)).pack(
             anchor='w', padx=5, pady=(self.LINESPACE, self.BIGLINESPACE))
 
@@ -391,6 +437,7 @@ class FormApp:
         btn_row = Frame(bottom_bar)
         btn_row.pack(pady=(0, 5))
 
+<<<<<<< HEAD
         if evil == True:
             OverlayButtonLabel = "Evil Overlay All"
             AbortButtonLabel = "Evil Abort"
@@ -401,6 +448,11 @@ class FormApp:
         Button(btn_row, text=OverlayButtonLabel, command=overlay_all,
                width=15).pack(side='left', padx=5)
         Button(btn_row, text=AbortButtonLabel, command=abort_all,
+=======
+        Button(btn_row, text="Overlay All", command=overlay_all,
+               width=15).pack(side='left', padx=5)
+        Button(btn_row, text="Abort", command=abort_all,
+>>>>>>> 74e624bdc9e6c00561c918a0c088b519847b368b
                width=10).pack(side='left', padx=5)
 
         self.progress = ttk.Progressbar(bottom_bar, orient='horizontal',
